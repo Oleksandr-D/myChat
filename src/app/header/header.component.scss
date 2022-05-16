@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+}
+
+header {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 0px;
+  height: 60px;
+  padding: 0px 20px;
+}
+
+.hed-title {
+  color: white;
+  font-weight: bolder;
+}
+
+#add-post,
+#user-name,
+#sign-out {
+  width: 100px;
+  height: 40px;
+  border-radius: 0px;
+  background-color: black;
+  transition-duration: 0.3s;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#add-post {
+  border: 2px solid green;
+  color: green;
+}
+
+#add-post:hover {
+  border: 2px solid rgb(255, 255, 255);
+  background-color: green;
+  color: rgb(255, 255, 255);
+}
+
+#user-name {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 230, 0);
+}
+
+#sign-out {
+  border: 2px solid rgb(255, 166, 0);
+  color: orange;
+}
+
+#sign-out:hover {
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 166, 0);
+}
+
+.hed-dtn-wraper {
+  width: 330px;
+  display: inline-flex;
+  justify-content: center;
+}

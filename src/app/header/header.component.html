@@ -1,0 +1,10 @@
+<header>
+   <div class="hed-title">myChat Angular</div>
+   <div class="hed-dtn-wraper">
+     <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Add post</button>
+     <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Sign in</button>
+     <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
+     <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Sign up</button>
+     <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Sign out</button>
+   </div>
+ </header>
