@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { UsersListComponent } from './users-list/users-list.component';
-import { MessageFieldComponent } from './message-field/message-field.component';
+import { MessageFieldComponent } from './chat/message-field/message-field.component';
+import { ChatComponent } from './chat/chat.component';
+import { UserListComponent } from './chat/user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    UsersListComponent,
+    ChatComponent,
+    UserListComponent,
     MessageFieldComponent,
-
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

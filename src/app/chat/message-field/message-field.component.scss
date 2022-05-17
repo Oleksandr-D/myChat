@@ -1,0 +1,15 @@
+@import '../../shared/styles/_reset.scss';
+@import '../../shared/styles/_variables.scss';
+
+ .container{
+    height: 100%;
+    box-shadow: 0px 0px 5px black;
+    margin: 20px 20px 20px 30px;
+    padding: 40px;
+ }
+
+ .message-box{
+    width: 100% ;
+    font-family: $sec-font;
+    box-shadow: inset 0px 0px 8px 0px black;
+ }

@@ -1,5 +1,7 @@
 <header>
+  <a [routerLink]="['/chat']">
    <div class="hed-title">myChat Angular</div>
+  </a>
    <div class="hed-dtn-wraper">
      <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Add post</button>
      <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Sign in</button>
