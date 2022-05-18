@@ -1,12 +1,70 @@
 <header>
   <a [routerLink]="['/chat']">
-   <div class="hed-title">myChat Angular</div>
+    <div class="hed-title">мійЧат Angular</div>
   </a>
-   <div class="hed-dtn-wraper">
-     <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Add post</button>
-     <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Sign in</button>
-     <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
-     <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Sign up</button>
-     <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Sign out</button>
-   </div>
- </header>
+  <div class="hed-dtn-wraper">
+    <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Написати повідомлення</button>
+    <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Увійти</button>
+    <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
+    <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Зареєструватися</button>
+    <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Вийти з аккаунта</button>
+  </div>
+</header>
+<ng-container>
+  <form>
+    <div *ngIf="signInWindow" class="modal-window-wraper">
+      <div class="modal-window">
+        <h3 class="modal-title">Увійти</h3>
+        <span>Електронна пошта:</span>
+        <input [(ngModel)]="email" name="email" id="em" type="email" required>
+        <span>Пароль:</span>
+        <input [(ngModel)]="password" name="password" id="paswd" type="password" required>
+        <p class="modal-btn-wraper">
+          <button (click)="signIn()" type="button" id="close">Закрити</button>
+          <button (click)="signInSubmit()" type="button" id="submit">Увійти</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</ng-container>
+<ng-container>
+  <div *ngIf="addPostWindow" class="modal-window-wraper">
+    <div class="modal-window">
+      <h3 class="modal-title">Add post</h3>
+      <!-- <ng-container *ngIf="userBlogs.length === 4">
+        <div style="font-size:25px; font-weight: bolder; color:rgb(228, 2, 2)">
+          Not enough space to display blogs!</div>
+      </ng-container> -->
+      <span>Title:</span>
+      <input [(ngModel)]="topic" name="topic" type="text">
+      <span>Text:</span>
+      <textarea [(ngModel)]="message" name="message" type="text"></textarea>
+      <p class="modal-btn-wraper">
+        <button (click)="addPost()" type="button" id="close">Закрити</button>
+        <button [disabled]="!message || !topic" *ngIf="!editStatus" (click)="addPostModal()" type="button" id="submit">
+          Надіслати
+        </button>
+        <button [disabled]="!message || !topic" *ngIf="editStatus" (click)="savePost()" type="button" id="submit">
+          Зберегти
+        </button>
+      </p>
+    </div>
+  </div>
+</ng-container>
+<ng-container>
+  <div *ngIf="signUpWindow" class="modal-window-wraper">
+    <div class="modal-window">
+      <h3 class="modal-title">Зареєструватися</h3>
+      <span>Ім'я користувача:</span>
+      <input [(ngModel)]="userName" name="userName" id="log" log type="text">
+      <span>Електронна пошта:</span>
+      <input [(ngModel)]="email" name="email" id="em" type="email">
+      <span>Пароль:</span>
+      <input [(ngModel)]="password" name="password" id="paswd" type="password">
+      <p class="modal-btn-wraper">
+        <button (click)="signUp()" type="button" id="close">Закрити</button>
+        <button (click)="signUpSubmit()" type="button" id="submit">Увійти</button>
+      </p>
+    </div>
+  </div>
+</ng-container>

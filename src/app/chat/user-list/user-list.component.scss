@@ -13,7 +13,11 @@
    flex-direction: column;
    padding: 20px;
    box-shadow: inset 0px 0px 13px 3px white;
-   font-family: $main-font;
+   font-family: $third-font;
+   h3{
+      font-size: 14px;
+   }
+   p{font-size: 12px;}
 }
 
 .img-wrap{

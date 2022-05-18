@@ -1,14 +1,22 @@
 @font-face{
-   font-family: 'banhij';
-   src:url('../styles/fonts/bahij-sultannahia.ttf');
+   font-family: 'Jura';
+   src:url('../styles/fonts/Jura/static/Jura-SemiBold.ttf');
 }
 
 @font-face{
-   font-family: 'ChronicaPro';
-   src:url('../styles/fonts/ChronicaPro-Regular.ttf');
+   font-family: 'Neucha';
+   src:url('../styles/fonts/Neucha/Neucha-Regular.ttf');
+}
+@font-face{
+   font-family: 'Montserrat';
+   src:url('../styles/fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf');
 }
 
 
+
 $main-shadow:rgb(22, 22, 22);
-$main-font:'banhij';
-$sec-font:'ChronicaPro';
+$main-font:'Jura';
+$sec-font:'Neucha';
+$third-font:'Montserrat';
+$firct-col:rgb(20, 114, 255);
+$sec-col: rgb(238, 215, 7);

@@ -2,6 +2,10 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {
+  ChatService
+} from '../shared/services/chat.service';
+
 
 @Component({
   selector: 'app-header',
@@ -20,8 +24,12 @@ export class HeaderComponent implements OnInit {
   email!: string;
   password!: string;
   name!: string;
+  addUserStatus = false;
+  editStatus = false;
 
-  constructor() {}
+  constructor(
+    private chatSetvice: ChatService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -45,20 +53,49 @@ export class HeaderComponent implements OnInit {
     this.userName = '';
     this.email = '';
     this.password = '';
-    
+
   };
 
-    //button Sign up
-    signUp(): void {
-      this.signUpWindow = !this.signUpWindow;
-      this.resetForm();
-    };
+  //button Sign up
+  signUp(): void {
+    this.signUpWindow = !this.signUpWindow;
+    this.resetForm();
+  };
 
-      //button sign out
+  //button sign out
   signOut(): void {
     this.enterStatus = !this.enterStatus;
     this.adminStatus = !this.adminStatus;
     this.name = '';
     this.email = '';
   };
+
+
+//button submit on sign in window
+signInSubmit(): void {
+  const ceck = this.chatSetvice.checkSignIn();
+  this.chatSetvice.validateUser(this.email, this.userName);
+  if (this.chatSetvice.checkMail && ceck) {
+    this.adminStatus = !this.adminStatus;
+    this.signInWindow = !this.signInWindow;
+    this.enterStatus = !this.enterStatus;
+    //get user name from service
+    this.name = this.chatSetvice.getUserName(this.email);
+    
+  } else if (!this.chatSetvice.checkMail && ceck) {
+    alert('User not exist. Please sign up.');
+  };
+};
+
+addPostModal(){}
+
+savePost(){}
+
+signUpSubmit(){}
+
+
+
+
+
+
 }
