@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
-import { IMesg } from '../interfases/message.interface';
-import { IUser } from '../interfases/user.interface';
+import {
+  Injectable
+} from '@angular/core';
+import {
+  IMesg
+} from '../interfases/message.interface';
+import {
+  IUser
+} from '../interfases/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +16,6 @@ export class ChatService {
   private message: Array < IMesg >= [{
     id: 1,
     postedBy: 'Admin',
-    topic: 'First post',
     date: new Date(),
     message: 'Sign up to create your account and start to use Angular blog'
   }];
@@ -30,7 +35,7 @@ export class ChatService {
   public em!: any;
   public addUserStatus = false;
 
-  constructor() { }
+  constructor() {}
 
   getBlogs(): Array < IMesg > {
     return this.message;
@@ -48,7 +53,7 @@ export class ChatService {
     this.message.splice(index, 1, message);
   };
   //checking if user exists
-  validateUser(email: string , userName:string): void {
+  validateUser(email: string, userName: string): void {
     this.checkMail = this.users.some(user => user.email === email);
     this.checkUserName = this.users.some(userNames => userNames.userName === userName);
   };
@@ -67,21 +72,21 @@ export class ChatService {
     this.users.push(user);
   };
 
-    // input validation sign in
-    getS = (selector: any) => document.querySelector(selector);
-    checkSignIn(): true | false{
-      this.paswd = this.paswdRegExp.test(this.getS('#paswd').value);
-      this.em = this.emailRegExp.test(this.getS('#em').value);
-      if (this.paswd && this.em) {
-       this.addUserStatus = true;
-       return this.addUserStatus;
-      } else {
-        this.addUserStatus = false;
-        alert('Check the entered data')
-        return this.addUserStatus;
-       
-      };
+  // input validation sign in
+  getS = (selector: any) => document.querySelector(selector);
+  checkSignIn(): true | false {
+    this.paswd = this.paswdRegExp.test(this.getS('#paswd').value);
+    this.em = this.emailRegExp.test(this.getS('#em').value);
+    if (this.paswd && this.em) {
+      this.addUserStatus = true;
+      return this.addUserStatus;
+    } else {
+      this.addUserStatus = false;
+      alert('Check the entered data')
+      return this.addUserStatus;
+
     };
+  };
 
 
 }

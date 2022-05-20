@@ -43,8 +43,8 @@ header {
 }
 
 #user-name {
-  color: rgb(0, 0, 0);
-  background-color: $sec-col;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(0,95,255,1) 0%, rgba(255,235,0,1) 100%);
 }
 
 #sign-out {
@@ -96,8 +96,7 @@ header {
   border-radius: 0px;
 }
 
-input,
-textarea {
+input{
   height: 35px;
   background: radial-gradient(circle, white 34%, #bebebe 100%);
   box-shadow: 0px 0px 7px 1px #8d8d8d;
@@ -106,8 +105,7 @@ textarea {
   font-size: 17px;
 }
 
-input:focus,
-textarea:focus {
+input:focus{
   box-shadow: 0px 0px 7px 3px #ffffff;
   background-color: #afafaf80;
 }
@@ -119,11 +117,7 @@ textarea:focus {
   align-items: center;
 }
 
-textarea {
-  height: 100px;
-  padding-left: 5px;
-  font-size: 17px;
-}
+
 
 #submit:disabled {
   cursor: not-allowed;

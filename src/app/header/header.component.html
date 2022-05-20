@@ -1,13 +1,17 @@
 <header>
-  <a [routerLink]="['/chat']">
     <div class="hed-title">мійЧат Angular</div>
-  </a>
   <div class="hed-dtn-wraper">
     <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Написати повідомлення</button>
+    <a [routerLink]="['/chat']">
     <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Увійти</button>
+    </a>
     <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
+    <a [routerLink]="['/chat']">
     <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Зареєструватися</button>
+    </a>
+    <a [routerLink]="['/']">
     <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Вийти з аккаунта</button>
+    </a>
   </div>
 </header>
 <ng-container>
@@ -27,30 +31,7 @@
     </div>
   </form>
 </ng-container>
-<ng-container>
-  <div *ngIf="addPostWindow" class="modal-window-wraper">
-    <div class="modal-window">
-      <h3 class="modal-title">Add post</h3>
-      <!-- <ng-container *ngIf="userBlogs.length === 4">
-        <div style="font-size:25px; font-weight: bolder; color:rgb(228, 2, 2)">
-          Not enough space to display blogs!</div>
-      </ng-container> -->
-      <span>Title:</span>
-      <input [(ngModel)]="topic" name="topic" type="text">
-      <span>Text:</span>
-      <textarea [(ngModel)]="message" name="message" type="text"></textarea>
-      <p class="modal-btn-wraper">
-        <button (click)="addPost()" type="button" id="close">Закрити</button>
-        <button [disabled]="!message || !topic" *ngIf="!editStatus" (click)="addPostModal()" type="button" id="submit">
-          Надіслати
-        </button>
-        <button [disabled]="!message || !topic" *ngIf="editStatus" (click)="savePost()" type="button" id="submit">
-          Зберегти
-        </button>
-      </p>
-    </div>
-  </div>
-</ng-container>
+
 <ng-container>
   <div *ngIf="signUpWindow" class="modal-window-wraper">
     <div class="modal-window">

@@ -7,6 +7,7 @@ import {
 } from '../shared/services/chat.service';
 
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -25,10 +26,11 @@ export class HeaderComponent implements OnInit {
   password!: string;
   name!: string;
   addUserStatus = false;
-  editStatus = false;
+  
+  
 
   constructor(
-    private chatSetvice: ChatService
+    private chatService: ChatService
   ) {}
 
   ngOnInit(): void {}
@@ -70,27 +72,21 @@ export class HeaderComponent implements OnInit {
     this.email = '';
   };
 
-
-//button submit on sign in window
-signInSubmit(): void {
-  const ceck = this.chatSetvice.checkSignIn();
-  this.chatSetvice.validateUser(this.email, this.userName);
-  if (this.chatSetvice.checkMail && ceck) {
+  //button submit on sign in window
+  signInSubmit(): void {
+  const ceck = this.chatService.checkSignIn();
+  this.chatService.validateUser(this.email, this.userName);
+  if (this.chatService.checkMail && ceck) {
     this.adminStatus = !this.adminStatus;
     this.signInWindow = !this.signInWindow;
     this.enterStatus = !this.enterStatus;
     //get user name from service
-    this.name = this.chatSetvice.getUserName(this.email);
-    
-  } else if (!this.chatSetvice.checkMail && ceck) {
+    this.name = this.chatService.getUserName(this.email);
+  } else if (!this.chatService.checkMail && ceck) {
     alert('User not exist. Please sign up.');
   };
 };
-
-addPostModal(){}
-
-savePost(){}
-
+// signUp button
 signUpSubmit(){}
 
 

@@ -13,7 +13,6 @@
   font-family: $main-font;
   background: radial-gradient(circle, white 34%, #bebebe 100%);
   box-shadow: 0px 0px 10px 5px #d5d5d5;
-  border-radius: 10px;
   padding: 20px 40px;
 }
 
@@ -22,6 +21,52 @@
   justify-content: space-between;
   align-items: center;
 }
-.box-header ~ p{
-   margin-top: 20px;
+
+.box-header~p {
+  margin-top: 20px;
+}
+
+form {
+  margin: 40px 0px;
+}
+
+textarea {
+  @extend .message-box;
+  width: 80%;
+  height: 20%;
+  resize: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  transition-duration: 0.3s;
+}
+
+textarea:focus {
+  box-shadow: 0px 7px 12px 6px #d5d5d5;
+  transform: translateY(-3px);
+}
+
+textarea::placeholder {
+  color: #a7a7a7;
+}
+
+fieldset {
+  display: flex;
+}
+
+#submit {
+  @extend .message-box;
+  margin-left: 20px;
+  width: 10%;
+  padding: 10px 10px;
+  color: $main-shadow;
+  font-size: 20px;
+  font-family: $sec-font;
+  transition-duration: 0.3s;
+}
+
+#submit:hover {
+  box-shadow: 0px 7px 12px 6px #d5d5d5;
+  transform: translateY(-3px);
+  border-radius: 5px;
 }

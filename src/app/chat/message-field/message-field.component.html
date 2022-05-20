@@ -7,4 +7,21 @@
     </div>
     <p>Message text</p>
   </div>
+  <div class="wraper-post-message">
+    <form>
+      <fieldset>
+        <textarea [(ngModel)]="message" name="message" type="text"
+                  placeholder="Напишіть повідомлення" autofocus>
+        </textarea>
+          <!-- <button (click)="addPost()" type="button" id="close">Закрити</button> -->
+          <button [disabled]="!message" *ngIf="!editStatus" (click)="sendMessage()"
+                  type="button" id="submit">
+                  Надіслати
+          </button>
+          <!-- <button [disabled]="!message" *ngIf="editStatus" (click)="savePost()" type="button" id="submit">
+                Зберегти
+              </button> -->
+      </fieldset>
+    </form>
+  </div>
 </div>
