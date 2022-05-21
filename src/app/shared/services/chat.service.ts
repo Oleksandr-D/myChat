@@ -88,5 +88,9 @@ export class ChatService {
     };
   };
 
+  // getName ():void{
+  //   this.name = this.chatService.findName[0].userName;
+  //   console.log('Works ==> user list', this.name);
+  //   console.log('Works ==> service', this.chatService.findName);
 
 }

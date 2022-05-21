@@ -22,12 +22,12 @@ export class HeaderComponent implements OnInit {
   userName!: string;
   signUpWindow = false;
   signInWindow = false;
-  email!: string;
   password!: string;
   name!: string;
   addUserStatus = false;
-  
-  
+  email!: string;
+  hello = false;
+
 
   constructor(
     private chatService: ChatService
@@ -74,20 +74,27 @@ export class HeaderComponent implements OnInit {
 
   //button submit on sign in window
   signInSubmit(): void {
-  const ceck = this.chatService.checkSignIn();
-  this.chatService.validateUser(this.email, this.userName);
-  if (this.chatService.checkMail && ceck) {
-    this.adminStatus = !this.adminStatus;
-    this.signInWindow = !this.signInWindow;
-    this.enterStatus = !this.enterStatus;
-    //get user name from service
-    this.name = this.chatService.getUserName(this.email);
-  } else if (!this.chatService.checkMail && ceck) {
-    alert('User not exist. Please sign up.');
+    const ceck = this.chatService.checkSignIn();
+    this.chatService.validateUser(this.email, this.userName);
+    if (this.chatService.checkMail && ceck) {
+      this.adminStatus = !this.adminStatus;
+      this.signInWindow = !this.signInWindow;
+      this.enterStatus = !this.enterStatus;
+      this.hello = true;
+      //get user name from service
+      this.name = this.chatService.getUserName(this.email);
+      console.log('Works ==> header', this.chatService.findName);
+
+    } else if (!this.chatService.checkMail && ceck) {
+      alert('User not exist. Please sign up.');
+    };
   };
-};
-// signUp button
-signUpSubmit(){}
+
+  goChat(){
+    this.hello = false;
+  }
+  // signUp button
+  signUpSubmit() {}
 
 
 

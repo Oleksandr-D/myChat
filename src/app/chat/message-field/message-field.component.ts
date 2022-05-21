@@ -1,5 +1,6 @@
 import {
   Component,
+  Input,
   OnInit
 } from '@angular/core';
 import {
@@ -7,17 +8,18 @@ import {
 } from 'src/app/shared/services/chat.service';
 import {IMesg} from '../../shared/interfases/message.interface';
 
+
 @Component({
   selector: 'app-message-field',
   templateUrl: './message-field.component.html',
   styleUrls: ['./message-field.component.scss']
 })
 export class MessageFieldComponent implements OnInit {
+  
   message!: string;
   editStatus = false;
   name!: string;
   userMessages!: IMesg[];
-
 
   constructor(private chatService: ChatService) {};
 

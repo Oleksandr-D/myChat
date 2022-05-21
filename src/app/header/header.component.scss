@@ -20,7 +20,8 @@ header {
 
 #add-post,
 #user-name,
-#sign-out {
+#sign-out,
+.btn {
   width: 150px;
   height: 40px;
   border-radius: 0px;
@@ -42,9 +43,14 @@ header {
   color: rgb(255, 255, 255);
 }
 
-#user-name {
+#user-name,
+.btn {
   color: rgb(255, 255, 255);
   background: linear-gradient(90deg, rgba(0,95,255,1) 0%, rgba(255,235,0,1) 100%);
+}
+
+.btn{
+  width: 100%;
 }
 
 #sign-out {
@@ -119,7 +125,8 @@ input:focus{
 
 
 
-#submit:disabled {
+#submit:disabled,
+#signInSubmit:disabled  {
   cursor: not-allowed;
   color: #ffffffb4;
   background-color: rgba(112, 112, 112, 0.438);
@@ -128,7 +135,8 @@ input:focus{
 #btn-edit,
 #btn-delete,
 #close,
-#submit {
+#submit,
+#signInSubmit {
   width: 70px;
   height: 30px;
   transition-duration: 0.3s;
@@ -149,7 +157,8 @@ input:focus{
   box-shadow: 0px 0px 3px 0px $firct-col;
 }
 
-#submit {
+#submit,
+#signInSubmit {
   margin-left: 5px;
   background-color: $sec-col;
 }

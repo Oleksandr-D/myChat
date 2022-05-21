@@ -54,7 +54,8 @@ fieldset {
   display: flex;
 }
 
-#submit {
+#submit,
+#signInSubmit {
   @extend .message-box;
   margin-left: 20px;
   width: 10%;
@@ -65,7 +66,8 @@ fieldset {
   transition-duration: 0.3s;
 }
 
-#submit:hover {
+#submit:hover,
+#signInSubmit  {
   box-shadow: 0px 7px 12px 6px #d5d5d5;
   transform: translateY(-3px);
   border-radius: 5px;

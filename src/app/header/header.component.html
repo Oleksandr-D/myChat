@@ -1,16 +1,16 @@
 <header>
-    <div class="hed-title">мійЧат Angular</div>
+  <a [routerLink]="['/chat']">
+  <div class="hed-title">мійЧат Angular</div>
+  </a>
   <div class="hed-dtn-wraper">
-    <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Написати повідомлення</button>
-    <a [routerLink]="['/chat']">
+    <!-- <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Написати повідомлення</button> -->
     <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Увійти</button>
-    </a>
     <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
-    <a [routerLink]="['/chat']">
+
     <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Зареєструватися</button>
-    </a>
+
     <a [routerLink]="['/']">
-    <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Вийти з аккаунта</button>
+      <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Вийти з аккаунта</button>
     </a>
   </div>
 </header>
@@ -24,12 +24,29 @@
         <span>Пароль:</span>
         <input [(ngModel)]="password" name="password" id="paswd" type="password" required>
         <p class="modal-btn-wraper">
-          <button (click)="signIn()" type="button" id="close">Закрити</button>
-          <button (click)="signInSubmit()" type="button" id="submit">Увійти</button>
+          <a [routerLink]="['/']">
+            <button (click)="signIn()" type="button" id="close">Закрити</button>
+          </a>
+            <button (click)="signInSubmit()" type="button" id="signInSubmit">
+              Увійти</button>
         </p>
       </div>
     </div>
   </form>
+</ng-container>
+<ng-container>
+  <div *ngIf="hello" class="modal-window-wraper">
+    <div class="modal-window">
+      <h3 class="modal-title">Вітаю {{name}} !</h3>
+      <h4>Почнемо спілкування?</h4>
+      
+        <a [routerLink]="['/chat']">
+        <button (click)="goChat()" class="btn">ТАК!</button>
+         </a>
+     
+    </div>
+
+  </div>
 </ng-container>
 
 <ng-container>
@@ -43,7 +60,9 @@
       <span>Пароль:</span>
       <input [(ngModel)]="password" name="password" id="paswd" type="password">
       <p class="modal-btn-wraper">
-        <button (click)="signUp()" type="button" id="close">Закрити</button>
+        <a [routerLink]="['/']">
+          <button (click)="signUp()" type="button" id="close">Закрити</button>
+        </a>
         <button (click)="signUpSubmit()" type="button" id="submit">Увійти</button>
       </p>
     </div>
